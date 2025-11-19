@@ -2,6 +2,7 @@ package com.example.palette
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.palette.graphics.Palette
@@ -9,12 +10,26 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.transition.TransitionInflater
 
 class DetailActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Enable window content transitions
+        window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
+
+        // Set up enter transition
+        val enterTransition = TransitionInflater.from(this)
+            .inflateTransition(R.transition.detail_enter_transition)
+        window.enterTransition = enterTransition
+
+        // Set up shared element transition
+        val sharedElementTransition = TransitionInflater.from(this)
+            .inflateTransition(R.transition.shared_element_transition)
+        window.sharedElementEnterTransition = sharedElementTransition
 
         val toolbar = findViewById<Toolbar>(R.id.detailToolbar)
         setSupportActionBar(toolbar)
@@ -53,4 +68,3 @@ class DetailActivity : AppCompatActivity() {
 
     }
 }
-

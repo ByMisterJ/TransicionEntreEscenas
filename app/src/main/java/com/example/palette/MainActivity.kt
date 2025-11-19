@@ -4,17 +4,27 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityOptionsCompat
 import androidx.palette.graphics.Palette
+import android.transition.TransitionInflater
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Enable window content transitions
+        window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Set up exit transition
+        val exitTransition = TransitionInflater.from(this)
+            .inflateTransition(R.transition.main_exit_transition)
+        window.exitTransition = exitTransition
 
         val toolbar = findViewById<Toolbar>(R.id.appbar)
         setSupportActionBar(toolbar)
