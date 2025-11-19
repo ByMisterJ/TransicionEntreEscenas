@@ -2,13 +2,6 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     android:transitionOrdering="together">
     
-    <!-- Image uses changeBounds transition -->
-    <changeBounds>
-        <targets>
-            <target android:targetId="@id/detailImage" />
-        </targets>
-    </changeBounds>
-    
     <!-- Description text slides from bottom -->
     <slide
         android:slideEdge="bottom"
