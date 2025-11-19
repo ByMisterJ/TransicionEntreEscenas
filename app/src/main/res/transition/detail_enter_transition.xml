@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="together">
+    
+    <!-- Image uses changeBounds transition -->
+    <changeBounds>
+        <targets>
+            <target android:targetId="@id/detailImage" />
+        </targets>
+    </changeBounds>
+    
+    <!-- Description text slides from bottom -->
+    <slide
+        android:slideEdge="bottom"
+        android:duration="300"
+        android:startDelay="150">
+        <targets>
+            <target android:targetId="@id/descriptionText" />
+        </targets>
+    </slide>
+    
+    <!-- Chips group slides from bottom -->
+    <slide
+        android:slideEdge="bottom"
+        android:duration="300"
+        android:startDelay="200">
+        <targets>
+            <target android:targetId="@id/chipsGroup" />
+        </targets>
+    </slide>
+    
+    <!-- FAB fades in -->
+    <fade
+        android:duration="300"
+        android:startDelay="250">
+        <targets>
+            <target android:targetId="@id/fab" />
+        </targets>
+    </fade>
+    
+</transitionSet>
