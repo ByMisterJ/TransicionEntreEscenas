@@ -1,0 +1,26 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_margin="8dp">
+
+    <!-- Vista de color (fondo) -->
+    <View
+        android:id="@+id/colorPreview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         />
+
+    <!-- Texto encima -->
+    <TextView
+        android:id="@+id/colorName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:text="Color name"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:background="#66000000" /> <!-- fondo negro semitransparente -->
+
+</FrameLayout>
+
